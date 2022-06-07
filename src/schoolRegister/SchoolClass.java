@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SchoolClass {
-    private char letter;
-    private int degree;
+    private char letter; //zrobiłbym stringa i nazwał classId, bo klasa w szkole nie musi się ograniczać jedynie do jednej litery
+    private int degree; //raczej chodzi o year albo amerykański grade 
     private Teacher classTutor;
     private List<Student> students = new ArrayList<>();
 
@@ -37,11 +37,15 @@ public class SchoolClass {
     }
 
     public void displayStudents(){
-        int i = 1;
+        int i = 1; // zmienna "i" nic mi nie mówi w tym przypadku, lepsze byłoby np rowNumber albo samo row
         for (Student student : students){
             System.out.println(i + ": " + student.getName() + " " + student.getSurname() + " grade: " + student.getGrade());
             i++;
+            // mozliwe, ze cos takiego by dzialalo spoko 
+            // System.out.println((i++) + ": " + student.getName() + " " + student.getSurname() + " grade: " + student.getGrade());
+            // https://stackoverflow.com/questions/24853/what-is-the-difference-between-i-and-i
         }
+        
     }
 
 }
