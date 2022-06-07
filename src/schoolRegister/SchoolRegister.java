@@ -29,7 +29,7 @@ public class SchoolRegister{
         int i = 1;
         for (SchoolClass schoolClass : schoolClasses){
             System.out.println(i + ": " + schoolClass.getDegree() + schoolClass.getLetter() + " " + schoolClass.getClassTutor().getName() + schoolClass.getClassTutor().getSurname());
-            i++;
+            i++; // ta sama sytuacja co w SchoolClass
         }
     }
 
@@ -38,7 +38,7 @@ public class SchoolRegister{
         int i = 1;
         for (Teacher teacher : teachers){
             System.out.println(i + ": " + teacher.getName() + " " + teacher.getSurname());
-            i++;
+            i++; // ta sama sytuacja co w SchoolClass
         }
     }
 
@@ -53,7 +53,7 @@ public class SchoolRegister{
     }
 
     public SchoolClass selectClass(int userInput){
-        userInput -= 1;
+        userInput -= 1; // dlaczego -1 a nie np -3? Z dupska ta jedyneczka tzw magiczna liczba, bo chuj wie co ona tu robi. Ogólnie jak już masz pisać taka liczbę to tworzysz zmienna, która będzie coś mówiła o danej zmiennej i wtedy operujesz tą zmienna
         return schoolClasses.get(userInput);
     }
 }
