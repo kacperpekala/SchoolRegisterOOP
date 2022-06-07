@@ -36,9 +36,23 @@ public class Main {
                         schoolRegister.saveTeacher(newTeacher);
                         System.out.println("Do you want add another teacher? (Y/n)");
                         String userInput = scan.next();
-                        if (userInput.equals("n")) {
+                        if (userInput.equals("n")) { 
                             addAnotherTeacher = false;
                         }
+                        /*
+                        System.out.println("Do you want add another teacher? (Y/n)");
+                        String userInput = scan.next();
+                        if (userInput.equals("n")) { 
+                            addAnotherTeacher = false;
+                        }
+                        czesto powtarza Ci sie tutaj ten kawalek kodu, mozesz zrobic odzielna metode, ktora bedzie przyjmowala stringa i booleana
+                        a nastepnie sobie dzialala
+                        ogolnie "n" wjebalbym do zmiennej, bo powiedzmy ze w przyszlosci chcialbys to zmienic na cancel 
+                        to nie bedziesz napierdalal podmieniania, tylko zmienisz wartosc zmiennej
+                        No i co by sie stalo jakbym wpisal w inputa "chujNieChce"
+                        To wydaje mi sie ze nadal kazaloby dodac kolejnego teachera
+                        
+                        */
                     } while (addAnotherTeacher);
                     break;
                 case 2:
@@ -46,7 +60,7 @@ public class Main {
                         System.out.println("All teachers at school");
                         schoolRegister.displayTeachers();
                     } else {
-                        System.out.println("There are no teachers at school");
+                        System.out.println("There are no teachers at school"); // spoko, ze obslugujesz wyjatki 
                     }
                     break;
                 case 3:
@@ -156,7 +170,7 @@ public class Main {
                                     if (student.getGrade() == null) {
                                         System.out.println(student.getName() + " " + student.getSurname());
                                         System.out.println("enter a note");
-                                        int note = scan.nextInt();
+                                        int note = scan.nextInt(); // dodalbym validacje ze nie mozesz np wpierdolic tutaj 2137 i umieścić ja w zmiennych, a pozniej z jakas metodka cos sie bawic 
                                         student.setGrade(note);
                                     }
                                     else {
